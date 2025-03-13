@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result Status</title>
+</head>
+
+<body>
+  <h1>Check Your Result Status</h1>
+  <div class="full">
+    <form>
+      English: <input type="text" id="n1"><br>
+      Hindi: <input type="text" id="n2"><br>
+      Sanskrit: <input type="text" id="n3"><br>
+      Maths: <input type="text" id="n4"><br>
+      Science: <input type="text" id="n5"><br>
+      S.S.T: <input type="text" id="n6"><br><br>
+    </form>
+
+    <button type="button" onclick="check()">Result Status</button>
+
+
+    <div id="result"></div>
+  </div>
+  
+  <h2>CODE BY: PUSHPENDRA!</h2>
+</body>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0.5px;
+    font-family: Arial, sans-serif;
+  }
+
+  input {
+    height: 0.5cm;
+    width: 1cm;
+    display: flex;
+  }
+
+  h1 {
+    text-align: center;
+    background: #16FBAC;
+    color: white;
+    padding: 20px;
+  }
+
+  button {
+    position: absolute;
+    top: 250px;
+    left: 180px;
+    height: 50px;
+    background: #DFCC2E;
+    color: #375041;
+    font-size: 15px;
+    border: 1px solid #237AEE;
+    border-radius: 6px;
+  }
+  
+  h2{
+    font-size: 15px;
+    text-align: right;
+    position: absolute;
+    right: 20px;
+    color: #367FFF;
+  }
+</style>
+
+<script>
+  function check() {
+    // Getting values from the input fields
+    var a = parseInt(document.getElementById("n1").value);
+    var b = parseInt(document.getElementById("n2").value);
+    var c = parseInt(document.getElementById("n3").value);
+    var d = parseInt(document.getElementById("n4").value);
+    var e = parseInt(document.getElementById("n5").value);
+    var f = parseInt(document.getElementById("n6").value);
+
+    // Total marks
+    var total = a + b + c + d + e + f;
+
+    // Percentage calculation
+    var perc = (total / 600) * 100;
+
+    // Display the result
+    var resultText = "Total Marks = " + total + "<br>";
+    resultText += "Percentage = " + perc.toFixed(2) + "%";
+
+    document.getElementById("result").innerHTML = resultText;
+  }
+</script>
+
+</html>
